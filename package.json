@@ -1,8 +1,8 @@
 {
-  "name": "iot_gl_app",
+  "name": "hidroponic_app",
   "version": "1.0.0",
-  "description": "IOT_GL_APP",
-  "author": "IoTicos.org",
+  "description": "HIDROPONIC_APP",
+  "author": "benjoks",
   "scripts": {
     "dev": "nuxt",
     "devn": "nodemon api/index.js --exec babel-node",
