@@ -11,7 +11,7 @@ import AlarmRule from "../models/emqx_alarm_rule.js";
 const auth = {
   auth: {
     username: "admin",
-    password: "emqxsecret"
+    password: process.env.EMQX_DEFAULT_SECRET
   }
 };
 
@@ -19,7 +19,7 @@ const auth = {
 
 //******************
 //**** A P I *******
-//****************** 
+//******************
 
 //CREATE ALARM-RULE
 router.post("/alarm-rule", checkAuth, async (req, res) => {
@@ -101,7 +101,7 @@ router.delete("/alarm-rule", checkAuth, async (req, res) => {
 
 //**********************
 //**** FUNCTIONS *******
-//********************** 
+//**********************
 
 //CREATE ALARM
 async function createAlarmRule(newAlarm) {

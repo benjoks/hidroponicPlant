@@ -6,7 +6,7 @@ const colors = require("colors");
 const auth = {
   auth: {
     username: "admin",
-    password: "emqxsecret"
+    password: process.env.EMQX_DEFAULT_SECRET
   }
 };
 
@@ -24,7 +24,7 @@ To manually delete the resources and restart node */
 
 /* Este administrador corrobora que existan 2 recursos,
 Si no hay ninguno, entonces los crea.
-Si hay uno o más de dos, lanza advertencia. 
+Si hay uno o más de dos, lanza advertencia.
 Para borrar manualmente los recursos y reiniciemos node */
 
 //https://docs.emqx.io/en/broker/v4.1/advanced/http-api.html#response-code
@@ -36,30 +36,30 @@ try {
     const url = "http://localhost:8085/api/v4/resources/";
 
     const res = await axios.get(url, auth);
-  
+
     const size = res.data.data.length;
-  
+
     if (res.status === 200) {
-  
+
       if (size == 0) {
         console.log("***** Creating emqx webhook resources *****".green);
-  
+
         createResources();
       } else if (size == 2) {
         res.data.data.forEach(resource => {
           if (resource.description == "alarm-webhook") {
             global.alarmResource = resource;
-  
+
             console.log("▼ ▼ ▼ ALARM RESOURCE FOUND ▼ ▼ ▼ ".bgMagenta);
             console.log(global.alarmResource);
             console.log("▲ ▲ ▲ ALARM RESOURCE FOUND ▲ ▲ ▲ ".bgMagenta);
             console.log("\n");
             console.log("\n");
           }
-  
+
           if (resource.description == "saver-webhook") {
             global.saverResource = resource;
-  
+
             console.log("▼ ▼ ▼ SAVER RESOURCE FOUND ▼ ▼ ▼ ".bgMagenta);
             console.log(global.saverResource);
             console.log("▲ ▲ ▲ SAVER RESOURCE FOUND ▲ ▲ ▲ ".bgMagenta);
@@ -77,7 +77,7 @@ try {
             printWarning();
           }, 1000);
         }
-  
+
         printWarning();
       }
     }else{
@@ -90,7 +90,7 @@ try {
 
 
 
- 
+
 }
 
 //create resources
@@ -104,37 +104,37 @@ async function createResources() {
             "config": {
                 url: "http://localhost:3001/api/saver-webhook",
                 headers: {
-                    token: "121212"
+                    token: process.env.EMQX_TOKEN_API
                 },
                 method: "POST"
             },
             description: "saver-webhook"
         }
-    
+
         const data2 = {
             "type": "web_hook",
             "config": {
                 url: "http://localhost:3001/api/alarm-webhook",
                 headers: {
-                    token: "121212"
+                    token: process.env.EMQX_TOKEN_API
                 },
                 method: "POST"
             },
             description: "alarm-webhook"
         }
-    
+
         const res1 = await axios.post(url, data1, auth);
-    
+
         if (res1.status === 200){
             console.log("Saver resource created!".green);
         }
-    
+
         const res2 = await axios.post(url, data2, auth);
-    
+
         if (res2.status === 200){
             console.log("Alarm resource created!".green);
         }
-    
+
         setTimeout(() => {
             console.log("***** Emqx WH resources created! :) *****".green);
             listResources();
@@ -144,7 +144,7 @@ async function createResources() {
         console.log(error);
     }
 
-   
+
 
 }
 
