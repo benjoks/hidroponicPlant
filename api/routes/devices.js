@@ -13,7 +13,7 @@ import EmqxAuthRule from "../models/emqx_auth.js";
 
 //******************
 //**** A P I *******
-//****************** 
+//******************
 
 const auth = {
   auth: {
@@ -218,7 +218,7 @@ router.put("/saver-rule", checkAuth, async (req, res) => {
 
 //**********************
 //**** FUNCTIONS *******
-//********************** 
+//**********************
 
 async function getAlarmRules(userId) {
   try {
@@ -278,7 +278,7 @@ async function createSaverRule(userId, dId, status) {
 
 
   try {
-    const url = "http://localhost:8085/api/v4/rules";
+    const url = "http://"+process.env.EMQX_HOST+":8085/api/v4/rules";
 
     const topic = userId + "/" + dId + "/+/sdata";
 
@@ -329,7 +329,7 @@ async function createSaverRule(userId, dId, status) {
 //update saver rule
 async function updateSaverRuleStatus(emqxRuleId, status) {
   try {
-    const url = "http://localhost:8085/api/v4/rules/" + emqxRuleId;
+    const url = "http://"+process.env.EMQX_HOST+":8085/api/v4/rules/" + emqxRuleId;
 
     const newRule = {
       enabled: status
@@ -354,7 +354,7 @@ async function deleteSaverRule(dId) {
   try {
     const mongoRule = await SaverRule.findOne({ dId: dId });
 
-    const url = "http://localhost:8085/api/v4/rules/" + mongoRule.emqxRuleId;
+    const url = "http://"+process.env.EMQX_HOST+":8085/api/v4/rules/" + mongoRule.emqxRuleId;
 
     const emqxRule = await axios.delete(url, auth);
 
@@ -375,7 +375,7 @@ async function deleteAllAlarmRules(userId, dId) {
 
     if (rules.length > 0) {
       asyncForEach(rules, async rule => {
-        const url = "http://localhost:8085/api/v4/rules/" + rule.emqxRuleId;
+        const url = "http://"+process.env.EMQX_HOST+":8085/api/v4/rules/" + rule.emqxRuleId;
         const res = await axios.delete(url, auth);
       });
 
@@ -430,7 +430,7 @@ function makeid(length) {
 module.exports = router;
 
 /*
-userId/dId/temperature -> 
+userId/dId/temperature ->
 {
   value: 21,
   save: 1
