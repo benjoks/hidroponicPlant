@@ -4,17 +4,17 @@
       <ul class="nav">
         <li class="nav-item">
           <a
-            href="https://ioticos.org"
+            href="#"
             target="_blank"
             rel="noopener"
             class="nav-link"
           >
-            IoTicos.org
+            Hidruino.online
           </a>
         </li>
         <li class="nav-item">
           <a
-            href="https://ioticos.org"
+            href="#"
             target="_blank"
             rel="noopener"
             class="nav-link"
@@ -24,7 +24,7 @@
         </li>
         <li class="nav-item">
           <a
-            href="hhttps://ioticos.org"
+            href="#"
             target="_blank"
             rel="noopener"
             class="nav-link"
@@ -35,12 +35,12 @@
       </ul>
       <div class="copyright">
         &copy; {{ year }}, made with <i class="tim-icons icon-heart-2"></i> by
-        
+
         <a
-          href="https://ioticos.org"
+          href="#"
           target="_blank"
           rel="noopener"
-          >IoTicos</a
+          >Hidruino</a
         >
         for a better web.
       </div>

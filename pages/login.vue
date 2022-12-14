@@ -4,7 +4,7 @@
       <card class="card-login card-white">
         <template slot="header">
           <img src="img//card-primary.png" alt="" />
-          <h1 class="card-title">HydroPlant  </h1>
+          <h1 class="card-title">Hidruino  </h1>
         </template>
 
         <div>

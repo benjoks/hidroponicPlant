@@ -5,7 +5,7 @@
     <side-bar
       :background-color="sidebarBackground"
       short-title="HyPl"
-      title="HydroPlant"
+      title="Hidruino"
     >
       <template slot-scope="props" slot="links">
         <sidebar-item
