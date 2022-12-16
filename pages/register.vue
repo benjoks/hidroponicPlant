@@ -90,7 +90,7 @@ export default {
             this.user.password = "";
             this.user.email = "";
 
-            return "login";
+            return;
           }
 
         })
