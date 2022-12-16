@@ -4,43 +4,23 @@
       <ul class="nav">
         <li class="nav-item">
           <a
-            href="#"
+            href="https://hidruino.foroactivo.com"
             target="_blank"
             rel="noopener"
             class="nav-link"
           >
-            Hidruino.online
-          </a>
-        </li>
-        <li class="nav-item">
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener"
-            class="nav-link"
-          >
-            About Us
-          </a>
-        </li>
-        <li class="nav-item">
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener"
-            class="nav-link"
-          >
-            Blog
+            Unete a la comunidad de HIDRUINO
           </a>
         </li>
       </ul>
       <div class="copyright">
-        &copy; {{ year }}, made with <i class="tim-icons icon-heart-2"></i> by
+        &copy; {{ year }}, made with  <i class="tim-icons icon-heart-2"> </i>  by
 
         <a
           href="#"
           target="_blank"
           rel="noopener"
-          >Hidruino</a
+          > Hidruino </a
         >
         for a better web.
       </div>
