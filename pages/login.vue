@@ -4,7 +4,7 @@
       <card class="card-login card-white">
         <template slot="header">
           <img src="img//card-primary.png" alt="" />
-          <h1 class="card-title">Hidruino  </h1>
+          <h3 class="card-title" style="text-align: center">Iniciar Sesion</h3>
         </template>
 
         <div>
@@ -37,16 +37,12 @@
           >
             Login
           </base-button>
-          <div class="pull-left">
+          <div style="text-align: center">
             <h6>
               <nuxt-link class="link footer-link" to="/register">
                 Create Account
               </nuxt-link>
             </h6>
-          </div>
-
-          <div class="pull-right">
-            <h6><a href="#help!!!" class="link footer-link">Need Help?</a></h6>
           </div>
         </div>
       </card>

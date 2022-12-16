@@ -3,7 +3,7 @@
     <div class="sidebar-wrapper" ref="sidebarScrollArea">
       <div class="logo">
         <a href="#" class="simple-text logo-mini">
-          <img src="https://c8.alamy.com/compes/t7rpgd/mano-y-hojas-para-el-cuidado-de-la-plantas-para-logo-t7rpgd.jpg" alt="app-logo" />
+          <img src="https://pbs.twimg.com/media/Fj-4_YeXEAEp8Wf?format=png&name=240x240" alt="app-logo" />
         </a>
         <a href="#" class="simple-text logo-normal">
           {{ title }}

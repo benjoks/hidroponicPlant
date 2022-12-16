@@ -1,7 +1,7 @@
 export default {
     colors: {
       default: '#344675',
-      primary: '#42b883',
+      primary: '#1d8cf8',
       info: '#1d8cf8',
       danger: '#fd5d93',
       orange: '#ff8a76',
@@ -15,4 +15,4 @@ export default {
     },
     MAPS_API_KEY: 'YOUR_GOOGLE_MAPS_API_KEY'
   };
-  
+    
