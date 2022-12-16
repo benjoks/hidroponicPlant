@@ -57,7 +57,7 @@
 
             <div class="col-3">
               <base-input
-                label="Trigger Time"
+                label="Warning Time (minutes)"
                 v-model="newRule.triggerTime"
                 type="number"
               ></base-input>
@@ -121,7 +121,7 @@
 
             <el-table-column
               prop="triggerTime"
-              label="Trigger Time"
+              label="Warning Time (minutes)"
             ></el-table-column>
 
             <el-table-column prop="counter" label="Matches"></el-table-column>
@@ -313,7 +313,7 @@ export default {
         this.$notify({
           type: "warning",
           icon: "tim-icons icon-alert-circle-exc",
-          message: " Trigger Time is empty"
+          message: " Warning Time (minutes) is empty"
         });
         return;
       }

@@ -85,7 +85,7 @@
                     series: [{
                         name: '',
                         data: [],
-                        color: "#e14eca"
+                        color: "#1d8cf8"
                     },],
                     legend: {
                         itemStyle: {
@@ -155,7 +155,7 @@
                     this.chartOptions.series[0].color = "#00f2c3";
                 }
                 if (c == "primary") {
-                    this.chartOptions.series[0].color = "#e14eca";
+                    this.chartOptions.series[0].color = "#1d8cf8";
                 }
                 if (c == "warning") {
                     this.chartOptions.series[0].color = "#ff8d72";

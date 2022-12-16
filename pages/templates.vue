@@ -61,16 +61,16 @@
               <base-input v-model="ncConfig.unit" label="Unit" type="text">
               </base-input>
 
-              <base-input
+              <base-input hidden 
                 v-model.number="ncConfig.decimalPlaces"
-                label="Decimal Places"
+                label=""
                 type="number"
               >
               </base-input>
 
-              <base-input
+              <base-input hidden
                 v-model="ncConfig.icon"
-                label="Icon"
+                label=""
                 type="text"
               ></base-input>
 
@@ -78,7 +78,7 @@
 
               <base-input
                 v-model.number="ncConfig.variableSendFreq"
-                label="Send Freq"
+                label="Send Freq (seconds)"
                 type="number"
               ></base-input>
 
@@ -91,7 +91,7 @@
               ></base-input>
 
               <br />
-
+              <p>Color</p>
               <el-select
                 v-model="ncConfig.class"
                 class="select-success"
@@ -101,28 +101,29 @@
                 <el-option
                   class="text-success"
                   value="success"
-                  label="Success"
+                  label="Verde"
                 ></el-option>
                 <el-option
                   class="text-primary"
                   value="primary"
-                  label="Primary"
+                  label="Azul"
                 ></el-option>
                 <el-option
                   class="text-warning"
                   value="warning"
-                  label="Warning"
+                  label="Rojo"
                 ></el-option>
                 <el-option
                   class="text-danger"
                   value="danger"
-                  label="Danger"
+                  label="Rosado"
                 ></el-option>
+
               </el-select>
 
               <br /><br /><br />
 
-              <el-select
+              <el-select hidden
                 v-model="ncConfig.column"
                 class="select-success"
                 placeholder="Select Column Width"
@@ -433,7 +434,7 @@
 
               <base-input
                 v-model="iotIndicatorConfig.variableSendFreq"
-                label="Send Freq"
+                label="Send Freq (seconds)"
                 type="text"
               ></base-input>
 
@@ -735,16 +736,16 @@ export default {
           name: "Home",
           dId: "8888"
         },
-        variableFullName: "temperature",
+        variableFullName: "PH",
         variable: "varname",
         variableType: "input",
         variableSendFreq: "30",
-        unit: "Watts",
-        class: "success",
+        unit: "PH",
+        class: "primary",
         column: "col-12",
         decimalPlaces: 2,
         widget: "numberchart",
-        icon: "fa-sun",
+        icon: "fa-leaf",
         chartTimeAgo: 60,
         demo: true
       },
