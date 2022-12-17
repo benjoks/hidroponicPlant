@@ -92,7 +92,7 @@ router.delete('/template', checkAuth, async (req, res) => {
                 status: "fail",
                 error: "template in use"
             }
-    
+
             return res.json(response);
         }
 

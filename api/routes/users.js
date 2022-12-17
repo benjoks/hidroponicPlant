@@ -7,6 +7,7 @@ const { checkAuth } = require("../middlewares/authentication.js");
 //models import
 import User from "../models/user.js";
 import EmqxAuthRule from "../models/emqx_auth.js";
+import Template from '../models/template.js';
 
 //POST -> req.body
 //GET -> req.query
@@ -74,6 +75,73 @@ router.post("/register", async (req, res) => {
     };
 
     var user = await User.create(newUser);
+    console.log(user);
+
+    try {
+      const userId = user._id;
+
+      let newTemplate = {
+          name: 'PH y PPM',
+          description: 'Default template',
+          widgets: [
+                {
+                userId: 'sampleuserid',
+                selectedDevice: {
+                    name: 'Home',
+                    dId: '8888'
+                },
+                variableFullName: 'PH',
+                variable: 'SGMmdjJ1B8',
+                variableType: 'input',
+                variableSendFreq: '30',
+                unit: 'PH',
+                class: 'primary',
+                column: 'col-12',
+                decimalPlaces: 2,
+                widget: 'numberchart',
+                icon: 'fa-leaf',
+                chartTimeAgo: 60,
+                demo: true
+                },
+                {
+                userId: 'sampleuserid',
+                selectedDevice: {
+                    name: 'Home',
+                    dId: '8888'
+                },
+                variableFullName: 'PPM',
+                variabl: 'aNy6AHtEie',
+                variableType: 'input',
+                variableSendFreq: '30',
+                unit: 'PPM',
+                class: 'success',
+                column: 'col-12',
+                decimalPlaces: 2,
+                widget: 'numberchart',
+                icon: 'fa-leaf',
+                chartTimeAgo: 60,
+                demo: true
+                }
+            ]
+        };
+
+        newTemplate.userId = userId;
+        newTemplate.createdTime = Date.now();
+
+        console.log(newTemplate)
+
+        const r = await Template.create(newTemplate);
+
+        const response = {
+            status: "success",
+        }
+
+        return res.json(response)
+
+    } catch (error) {
+      console.log("Error creating Template: "+error);
+
+    }
 
 
     const response = {
