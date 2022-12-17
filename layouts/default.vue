@@ -35,7 +35,7 @@
         >
         </sidebar-item>
 
-        <sidebar-item
+        <sidebar-item hidden 
           :link="{
             name: 'Templates',
             icon: 'tim-icons icon-atom',
